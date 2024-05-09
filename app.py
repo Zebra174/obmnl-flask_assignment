@@ -88,7 +88,12 @@ def search_transactions():
     
     return render_template("search.html")
 
-
+# Calculator_feautre 
+@app.route("/balance")
+def total_balance():
+     TotalBalance= sum([transaction['amount'] for transaction in transactions])
+     print(TotalBalance)
+     return "Total Balance : " + str(TotalBalance)
 
 # Run the Flask app
 if __name__ == "__main__":
